@@ -35,13 +35,13 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
      // 開くページ数を取得（デフォルトは1ページ目）
-        int page = 1;
+        int page = 1;//あくまで初期値なので、この変数に後から色々入ることになる。
         try {
             page = Integer.parseInt(request.getParameter("page"));
         } catch(NumberFormatException e) {}//数字以外が入るとここで例外として扱われる。
 
         // 最大件数と開始位置を指定してメッセージを取得
-        List<Task> tasks = em.createNamedQuery("getAllTasks", Task.class)
+        List<Task> tasks = em.createNamedQuery("getAllTasks", Task.class)//作成したオブジェクトと結びつけてリストとする
                                    .setFirstResult(15 * (page - 1))//最初のデータが何番目かという話
                                    .setMaxResults(15)
                                    .getResultList();
