@@ -1,5 +1,5 @@
 package controllers;
-
+//タスク追加の処理全般の担当
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
@@ -39,7 +39,7 @@ public class CreateServlet extends HttpServlet {
             EntityManager em = DBUtil.createEntityManager();
             em.getTransaction().begin();
 
-            Task m = new Task();
+            Task m = new Task();//mをタスクのオブジェクトとして扱っている
 
             String title = request.getParameter("title");
             m.setTitle(title);

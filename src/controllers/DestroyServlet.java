@@ -18,7 +18,7 @@ import utils.DBUtil;
 @WebServlet("/destroy")
 public class DestroyServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
+//削除の処理を担当している
     /**
      * @see HttpServlet#HttpServlet()
      */

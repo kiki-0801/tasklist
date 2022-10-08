@@ -11,13 +11,13 @@
     <body>
         <div id="wrapper">
             <div id="header">
-                <h1>メッセージボード アプリケーション</h1>
+                <h1>タスク管理 アプリケーション</h1>
             </div>
             <div id="content">
                 ${param.content}<!-- この部分に各ページのビューが入る -->
             </div>
             <div id="footer">
-                by Taro Kirameki.
+                by oregatsukutta.
             </div>
         </div>
     </body>

@@ -14,9 +14,9 @@
 <input type="text" name="title" id="title" value="${task.title}" />
 <br /><br />
 
-<label for="content_msg">メッセージ</label><br />
+<label for="content_msg">タスク</label><br />
 <input type="text" name="content" id="content_msg" value="${task.content}" />
 <br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />
-<button type="submit">投稿</button>
+<button type="submit">追加</button>

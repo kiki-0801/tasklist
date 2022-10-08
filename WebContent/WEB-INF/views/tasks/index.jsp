@@ -7,7 +7,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
     </c:if>
-        <h2>メッセージ一覧</h2>
+        <h2>タスク一覧</h2>
         <ul>
             <c:forEach var="task" items="${tasks}">
                 <li>
@@ -20,10 +20,10 @@
         </ul>
          <div id="pagination"><!--ページを遷移するためのやつ -->
             （全 ${tasks_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((tasks_count - 1) / 15) + 1}" step="1">
+            <c:forEach var="i" begin="1" end="${((tasks_count - 1) / 15) + 1}" step="1"><!-- 指定の件数をページに表示するということ -->
                 <c:choose>
                     <c:when test="${i == page}">
-                        <c:out value="${i}" />&nbsp;
+                        <c:out value="${i}" />&nbsp;<!--  タスクの表示部分-->
                     </c:when>
                     <c:otherwise>
                         <a href="${pageContext.request.contextPath}/index?page=${i}"><c:out value="${i}" /></a>&nbsp;
@@ -32,7 +32,7 @@
             </c:forEach>
         </div>
 
-        <p><a href="${pageContext.request.contextPath}/new">新規メッセージの投稿</a></p>
+        <p><a href="${pageContext.request.contextPath}/new">新しいタスクの追加</a></p><!--  コンテクストパスの追加なので特に変更をする必要がない-->
 
     </c:param>
 </c:import>
